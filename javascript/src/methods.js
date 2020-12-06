@@ -186,7 +186,10 @@ function addMarkers(map, df, group, clusterOptions, clusterId, markerFunc) {
           let labelOptions = df.get(i, "labelOptions");
           if (label !== null) {
             if (labelOptions !== null) {
-              if(labelOptions.permanent) {
+              if (labelOptions.disableOnMobile & navigator.maxTouchPoints > 0) {
+                // https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent
+                // don't bind tooltips
+              } else if (labelOptions.permanent) {
                 marker.bindTooltip(label, labelOptions).openTooltip();
               } else {
                 marker.bindTooltip(label, labelOptions);

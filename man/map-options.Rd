@@ -65,6 +65,7 @@ labelOptions(
   style = NULL,
   zoomAnimation = NULL,
   sticky = TRUE,
+  disableOnMobile = FALSE,
   ...
 )
 
@@ -141,6 +142,8 @@ transparency}
 \item{style}{list of css style to be added to the tooltip}
 
 \item{sticky}{If true, the tooltip will follow the mouse instead of being fixed at the feature center. Default value is \code{TRUE} (different from leaflet.js \code{FALSE}); see \url{http://leafletjs.com/reference-1.3.1.html#tooltip-sticky}}
+
+\item{disableOnMobile}{Don't show labels on mobile if marker also has popups.}
 
 \item{draggable, keyboard, title, alt, zIndexOffset, riseOnHover, riseOffset}{marker options; see \url{http://leafletjs.com/reference-1.3.1.html#marker-option}}
 

@@ -144,3 +144,11 @@ leaflet(cities) %>% addTiles() %>%
                labelOptions(direction = "auto")
              }))
 #' <br/><br/>
+
+# Markers with Popup and Label disabled on mobile
+leaflet(cities) %>% addTiles() %>%
+  addMarkers(lng = ~Long, lat = ~Lat,
+             label = ~ City,
+             labelOptions = labelOptions(disableOnMobile = TRUE),
+             popup = ~ City)
+#' <br/><br/>

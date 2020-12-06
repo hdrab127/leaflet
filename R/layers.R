@@ -557,6 +557,7 @@ safeLabel <- function(label, data) {
 #' @param style list of css style to be added to the tooltip
 #' @param zoomAnimation deprecated. See \url{https://github.com/Leaflet/Leaflet/blob/master/CHANGELOG.md#api-changes-5}
 #' @param sticky If true, the tooltip will follow the mouse instead of being fixed at the feature center. Default value is \code{TRUE} (different from leaflet.js \code{FALSE}); see \url{http://leafletjs.com/reference-1.3.1.html#tooltip-sticky}
+#' @param disableOnMobile Don't show labels on mobile if marker also has popups.
 #' @describeIn map-options Options for labels
 #' @export
 labelOptions <- function(
@@ -573,6 +574,7 @@ labelOptions <- function(
   style = NULL,
   zoomAnimation = NULL,
   sticky = TRUE,
+  disableOnMobile = FALSE,
   ...
 ) {
   # use old (Leaflet 0.7.x) clickable if provided
@@ -588,7 +590,8 @@ labelOptions <- function(
     interactive = interactive, permanent = permanent, direction = direction,
     opacity = opacity, offset = offset,
     textsize = textsize, textOnly = textOnly, style = style,
-    className = className, sticky = sticky, ...
+    className = className, sticky = sticky, disableOnMobile = disableOnMobile,
+    ...
   ))
 }
 
